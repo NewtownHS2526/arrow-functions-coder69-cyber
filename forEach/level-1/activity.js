@@ -1,105 +1,8 @@
+
+
 // ============================================
-// FOREACH FUNCTION - LEVEL 1
+// FILTER FUNCTION - LEVEL 3
 // ============================================
-
-/*
-WHAT IS AN ARRAY?
-================
-An array is a special variable that can hold multiple values at once. 
-Think of it like a list or a collection of items. Arrays are ordered, 
-meaning each item has a position (called an index) starting from 0.
-
-Example:
-const numbers = [1, 2, 3, 4, 5];
-const names = ["Alice", "Bob", "Charlie"];
-const mixed = [1, "hello", true, 42];
-*/
-
-/*
-WHAT IS THE forEach() FUNCTION?
-================================
-The forEach() function is used to EXECUTE A FUNCTION for each element 
-in an array. Unlike map(), it doesn't return a new array - it's used 
-for performing actions or side effects (like printing, updating variables, etc.).
-
-Key Points:
-- Executes a function for each element
-- Does NOT return a new array (returns undefined)
-- Used for side effects (console.log, updating variables, etc.)
-- Original array stays unchanged
-- Cannot use break or continue (use regular for loop if needed)
-*/
-
-/*
-SYNTAX EXAMPLES
-===============
-*/
-
-// One-Line Arrow Function
-// array.forEach(element => { /* do something */ });
-
-// Regular Arrow Function Style
-// array.forEach((element) => {
-//   /* do something */
-// });
-
-// Classic Function Style (for comparison)
-// array.forEach(function(element) {
-//   /* do something */
-// });
-
-/*
-EXAMPLE 1: Printing Each Element
-*/
-const numbers1 = [1, 2, 3, 4, 5];
-
-// One-line arrow function
-console.log("Example 1 - One-line:");
-numbers1.forEach(n => console.log(n));
-// Output: 1, 2, 3, 4, 5 (each on a new line)
-
-// Regular arrow function
-console.log("Example 1 - Regular:");
-numbers1.forEach((n) => {
-  console.log(n);
-});
-// Output: 1, 2, 3, 4, 5 (each on a new line)
-
-/*
-EXAMPLE 2: Printing with Additional Text
-*/
-const names = ["Alice", "Bob", "Charlie"];
-
-// One-line arrow function
-console.log("Example 2 - One-line:");
-names.forEach(name => console.log(`Hello, ${name}!`));
-// Output: "Hello, Alice!", "Hello, Bob!", "Hello, Charlie!"
-
-// Regular arrow function
-console.log("Example 2 - Regular:");
-names.forEach((name) => {
-  console.log(`Hello, ${name}!`);
-});
-// Output: "Hello, Alice!", "Hello, Bob!", "Hello, Charlie!"
-
-/*
-EXAMPLE 3: Updating a Variable (Side Effect)
-*/
-let sum = 0;
-const numbers2 = [10, 20, 30];
-
-// One-line arrow function
-numbers2.forEach(n => sum += n);
-console.log("Example 3 - One-line sum:", sum); // 60
-
-// Reset sum
-sum = 0;
-
-// Regular arrow function
-numbers2.forEach((n) => {
-  sum += n;
-});
-console.log("Example 3 - Regular sum:", sum); // 60
 
 // ============================================
 // EXERCISES
@@ -108,108 +11,163 @@ console.log("Example 3 - Regular sum:", sum); // 60
 /*
 EXERCISE 1
 ----------
-Given the array [1, 2, 3, 4, 5], use forEach() to print each number 
-multiplied by 2.
+Given the array of objects:
+[
+  { product: "Laptop", price: 1000, inStock: true },
+  { product: "Mouse", price: 25, inStock: false },
+  { product: "Keyboard", price: 75, inStock: true },
+  { product: "Monitor", price: 300, inStock: false }
+]
+
+Use filter() to create a new array with only the products that are in stock.
 
 Write your solution using:
 - One-line arrow function
 - Regular arrow function
 */
 
-const exercise1Array = [1, 2, 3, 4, 5];
+const exercise1Array = [
+  { product: "Laptop", price: 1000, inStock: true },
+  { product: "Mouse", price: 25, inStock: false },
+  { product: "Keyboard", price: 75, inStock: true },
+  { product: "Monitor", price: 300, inStock: false }
+];
 
 // Your solution here (one-line arrow function):
-// exercise1Array.forEach(
+const exercise1Result1 = exercise1Array.filter(product => product.inStock);
 
 // Your solution here (regular arrow function):
-// exercise1Array.forEach((
+const exercise1Result2 = exercise1Array.filter(function(product) {
+  return product.inStock;
+});
 
-// Expected output: 2, 4, 6, 8, 10 (each on a new line)
+// Uncomment to test:
+console.log("Exercise 1 - One-line:", exercise1Result1); // [{ product: "Laptop", price: 1000, inStock: true }, { product: "Keyboard", price: 75, inStock: true }]
+console.log("Exercise 1 - Regular:", exercise1Result2); // [{ product: "Laptop", price: 1000, inStock: true }, { product: "Keyboard", price: 75, inStock: true }];
 
 /*
 EXERCISE 2
 ----------
-Given the array ["apple", "banana", "orange"], use forEach() to print 
-each fruit name in uppercase.
+Given the array of objects:
+[
+  { name: "Alice", age: 25, city: "New York" },
+  { name: "Bob", age: 30, city: "London" },
+  { name: "Charlie", age: 35, city: "New York" },
+  { name: "Diana", age: 28, city: "Paris" }
+]
+
+Use filter() to create a new array with only the people who live in "New York".
 
 Write your solution using:
 - One-line arrow function
 - Regular arrow function
 */
 
-const exercise2Array = ["apple", "banana", "orange"];
+const exercise2Array = [
+  { name: "Alice", age: 25, city: "New York" },
+  { name: "Bob", age: 30, city: "London" },
+  { name: "Charlie", age: 35, city: "New York" },
+  { name: "Diana", age: 28, city: "Paris" }
+];
 
 // Your solution here (one-line arrow function):
-// exercise2Array.forEach(
+const exercise2Result1 = exercise2Array.filter(person => person.city === "New York");
 
 // Your solution here (regular arrow function):
-// exercise2Array.forEach((
+const exercise2Result2 = exercise2Array.filter(function(person) {
+  return person.city === "New York";
+});
 
-// Expected output: "APPLE", "BANANA", "ORANGE" (each on a new line)
+// Uncomment to test:
+console.log("Exercise 2 - One-line:", exercise2Result1); // [{ name: "Alice", age: 25, city: "New York" }, { name: "Charlie", age: 35, city: "New York" }]
+console.log("Exercise 2 - Regular:", exercise2Result2); // [{ name: "Alice", age: 25, city: "New York" }, { name: "Charlie", age: 35, city: "New York" }];
 
 /*
 EXERCISE 3
 ----------
-Given the array [5, 10, 15, 20], use forEach() to calculate and print 
-the sum of all numbers. Use a variable to store the sum.
+Given the array [100, 250, 75, 500, 120, 300, 80], use filter() to create 
+a new array with only the numbers that are multiples of 25.
 
 Write your solution using:
 - One-line arrow function
 - Regular arrow function
 */
 
-const exercise3Array = [5, 10, 15, 20];
-let exercise3Sum = 0;
+const exercise3Array = [100, 250, 75, 500, 120, 300, 80];
 
 // Your solution here (one-line arrow function):
-// exercise3Array.forEach(
+const exercise3Result1 = exercise3Array.filter(n => n % 25 === 0);
 
 // Your solution here (regular arrow function):
-// exercise3Array.forEach((
+const exercise3Result2 = exercise3Array.filter(function(n) {
+  return n % 25 === 0;
+});
 
 // Uncomment to test:
-// console.log("Exercise 3 - Sum:", exercise3Sum);
-// Expected: 50
+console.log("Exercise 3 - One-line:", exercise3Result1); // [100, 250, 75, 500, 300]
+console.log("Exercise 3 - Regular:", exercise3Result2); // [100, 250, 75, 500, 300];
 
 /*
 EXERCISE 4
 ----------
-Given the array ["red", "green", "blue"], use forEach() to print each 
-color with the text "Color: " before it.
+Given the array of objects:
+[
+  { title: "Book A", pages: 150 },
+  { title: "Book B", pages: 300 },
+  { title: "Book C", pages: 200 },
+  { title: "Book D", pages: 450 }
+]
+
+Use filter() to create a new array with only the books that have more than 
+200 pages.
 
 Write your solution using:
 - One-line arrow function
 - Regular arrow function
 */
 
-const exercise4Array = ["red", "green", "blue"];
+const exercise4Array = [
+  { title: "Book A", pages: 150 },
+  { title: "Book B", pages: 300 },
+  { title: "Book C", pages: 200 },
+  { title: "Book D", pages: 450 }
+];
 
 // Your solution here (one-line arrow function):
-// exercise4Array.forEach(
+const exercise4Result1 = exercise4Array.filter(book => book.pages > 200);
 
 // Your solution here (regular arrow function):
-// exercise4Array.forEach((
+const exercise4Result2 = exercise4Array.filter(function(book) {
+  return book.pages > 200;
+});
 
-// Expected output: "Color: red", "Color: green", "Color: blue" (each on a new line)
+// Uncomment to test:
+console.log("Exercise 4 - One-line:", exercise4Result1); // [{ title: "Book B", pages: 300 }, { title: "Book D", pages: 450 }]
+console.log("Exercise 4 - Regular:", exercise4Result2); // [{ title: "Book B", pages: 300 }, { title: "Book D", pages: 450 }];
 
 /*
 EXERCISE 5
 ----------
-Given the array [2, 4, 6, 8], use forEach() to print each number squared 
-(multiplied by itself).
+Given the array ["hello", "world", "javascript", "coding", "fun"], 
+use filter() to create a new array with only the words that have an 
+odd number of characters.
 
 Write your solution using:
 - One-line arrow function
 - Regular arrow function
 */
 
-const exercise5Array = [2, 4, 6, 8];
+const exercise5Array = ["hello", "world", "javascript", "coding", "fun"];
 
 // Your solution here (one-line arrow function):
-// exercise5Array.forEach(
+const exercise5Result1 = exercise5Array.filter(word => word.length % 2 !== 0);
 
 // Your solution here (regular arrow function):
-// exercise5Array.forEach((
+const exercise5Result2 = exercise5Array.filter(function(word) {
+  return word.length % 2 !== 0;
+});
 
-// Expected output: 4, 16, 36, 64 (each on a new line)
+// Uncomment to test:
+console.log("Exercise 5 - One-line:", exercise5Result1); // ["hello", "world", "coding", "fun"]
+console.log("Exercise 5 - Regular:", exercise5Result2); // ["hello", "world", "coding", "fun"]
 

@@ -1,3 +1,5 @@
+
+
 // ============================================
 // FOREACH FUNCTION - LEVEL 3
 // ============================================
@@ -31,15 +33,18 @@ const exercise1Array = [
 ];
 
 // Your solution here (one-line arrow function):
-// exercise1Array.forEach(
+exercise1Array.forEach(product => console.log(`${product.product}: $${product.price * product.quantity} total`));
 
 // Your solution here (regular arrow function):
-// exercise1Array.forEach((
+exercise1Array.forEach(function(product) {
+  console.log(`${product.product}: $${product.price * product.quantity} total`);
+});
 
 // Expected output:
 // "Laptop: $2000 total"
 // "Mouse: $125 total"
 // "Keyboard: $225 total"
+
 
 /*
 EXERCISE 2
@@ -55,12 +60,23 @@ Write your solution using:
 const exercise2Array = ["hello", "world", "javascript", "coding"];
 
 // Your solution here (one-line arrow function):
-// exercise2Array.forEach(
+exercise2Array.forEach(word => {
+  if (word.length > 5) {
+    console.log(word);
+  }
+});
 
 // Your solution here (regular arrow function):
-// exercise2Array.forEach((
+exercise2Array.forEach(function(word) {
+  if (word.length > 5) {
+    console.log(word);
+  }
+});
 
-// Expected output: "javascript", "coding" (each on a new line)
+// Expected output:
+// "javascript"
+// "coding"
+
 
 /*
 EXERCISE 3
@@ -78,14 +94,19 @@ const exercise3Array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let exercise3Product = 1;
 
 // Your solution here (one-line arrow function):
-// exercise3Array.forEach(
+exercise3Array.forEach(n => {
+  exercise3Product *= n;
+});
 
 // Your solution here (regular arrow function):
-// exercise3Array.forEach((
+exercise3Array.forEach(function(n) {
+  exercise3Product *= n;
+});
 
 // Uncomment to test:
-// console.log("Exercise 3 - Product:", exercise3Product);
+console.log("Exercise 3 - Product:", exercise3Product);
 // Expected: 3628800
+
 
 /*
 EXERCISE 4
@@ -103,12 +124,18 @@ Write your solution using:
 const exercise4Array = ["apple", "banana", "cherry"];
 
 // Your solution here (one-line arrow function):
-// exercise4Array.forEach(
+exercise4Array.forEach(word => console.log(word.split('').reverse().join('')));
 
 // Your solution here (regular arrow function):
-// exercise4Array.forEach((
+exercise4Array.forEach(function(word) {
+  console.log(word.split('').reverse().join(''));
+});
 
-// Expected output: "elppa", "ananab", "yrrehc" (each on a new line)
+// Expected output:
+// "elppa"
+// "ananab"
+// "yrrehc"
+
 
 /*
 EXERCISE 5
@@ -125,12 +152,19 @@ const exercise5Array = [12, 45, 8, 23, 56, 9];
 let exercise5Max = exercise5Array[0]; // Start with first element
 
 // Your solution here (one-line arrow function):
-// exercise5Array.forEach(
+exercise5Array.forEach(n => {
+  if (n > exercise5Max) {
+    exercise5Max = n;
+  }
+});
 
 // Your solution here (regular arrow function):
-// exercise5Array.forEach((
+exercise5Array.forEach(function(n) {
+  if (n > exercise5Max) {
+    exercise5Max = n;
+  }
+});
 
 // Uncomment to test:
-// console.log("Exercise 5 - Maximum:", exercise5Max);
+console.log("Exercise 5 - Maximum:", exercise5Max);
 // Expected: 56
-

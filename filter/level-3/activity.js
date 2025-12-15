@@ -32,15 +32,16 @@ const exercise1Array = [
 ];
 
 // Your solution here (one-line arrow function):
-// const exercise1Result1 = 
+const exercise1Result1 = exercise1Array.filter(product => product.inStock);
 
 // Your solution here (regular arrow function):
-// const exercise1Result2 = 
+const exercise1Result2 = exercise1Array.filter(function(product) {
+  return product.inStock;
+});
 
 // Uncomment to test:
-// console.log("Exercise 1 - One-line:", exercise1Result1);
-// console.log("Exercise 1 - Regular:", exercise1Result2);
-// Expected: [{ product: "Laptop", price: 1000, inStock: true }, { product: "Keyboard", price: 75, inStock: true }]
+console.log("Exercise 1 - One-line:", exercise1Result1); // [{ product: "Laptop", price: 1000, inStock: true }, { product: "Keyboard", price: 75, inStock: true }]
+console.log("Exercise 1 - Regular:", exercise1Result2); // [{ product: "Laptop", price: 1000, inStock: true }, { product: "Keyboard", price: 75, inStock: true }];
 
 /*
 EXERCISE 2
@@ -68,15 +69,16 @@ const exercise2Array = [
 ];
 
 // Your solution here (one-line arrow function):
-// const exercise2Result1 = 
+const exercise2Result1 = exercise2Array.filter(person => person.city === "New York");
 
 // Your solution here (regular arrow function):
-// const exercise2Result2 = 
+const exercise2Result2 = exercise2Array.filter(function(person) {
+  return person.city === "New York";
+});
 
 // Uncomment to test:
-// console.log("Exercise 2 - One-line:", exercise2Result1);
-// console.log("Exercise 2 - Regular:", exercise2Result2);
-// Expected: [{ name: "Alice", age: 25, city: "New York" }, { name: "Charlie", age: 35, city: "New York" }]
+console.log("Exercise 2 - One-line:", exercise2Result1); // [{ name: "Alice", age: 25, city: "New York" }, { name: "Charlie", age: 35, city: "New York" }]
+console.log("Exercise 2 - Regular:", exercise2Result2); // [{ name: "Alice", age: 25, city: "New York" }, { name: "Charlie", age: 35, city: "New York" }];
 
 /*
 EXERCISE 3
@@ -92,15 +94,16 @@ Write your solution using:
 const exercise3Array = [100, 250, 75, 500, 120, 300, 80];
 
 // Your solution here (one-line arrow function):
-// const exercise3Result1 = 
+const exercise3Result1 = exercise3Array.filter(n => n % 25 === 0);
 
 // Your solution here (regular arrow function):
-// const exercise3Result2 = 
+const exercise3Result2 = exercise3Array.filter(function(n) {
+  return n % 25 === 0;
+});
 
 // Uncomment to test:
-// console.log("Exercise 3 - One-line:", exercise3Result1);
-// console.log("Exercise 3 - Regular:", exercise3Result2);
-// Expected: [100, 250, 75, 500, 300]
+console.log("Exercise 3 - One-line:", exercise3Result1); // [100, 250, 75, 500, 300]
+console.log("Exercise 3 - Regular:", exercise3Result2); // [100, 250, 75, 500, 300];
 
 /*
 EXERCISE 4
@@ -129,15 +132,16 @@ const exercise4Array = [
 ];
 
 // Your solution here (one-line arrow function):
-// const exercise4Result1 = 
+const exercise4Result1 = exercise4Array.filter(book => book.pages > 200);
 
 // Your solution here (regular arrow function):
-// const exercise4Result2 = 
+const exercise4Result2 = exercise4Array.filter(function(book) {
+  return book.pages > 200;
+});
 
 // Uncomment to test:
-// console.log("Exercise 4 - One-line:", exercise4Result1);
-// console.log("Exercise 4 - Regular:", exercise4Result2);
-// Expected: [{ title: "Book B", pages: 300 }, { title: "Book D", pages: 450 }]
+console.log("Exercise 4 - One-line:", exercise4Result1); // [{ title: "Book B", pages: 300 }, { title: "Book D", pages: 450 }]
+console.log("Exercise 4 - Regular:", exercise4Result2); // [{ title: "Book B", pages: 300 }, { title: "Book D", pages: 450 }];
 
 /*
 EXERCISE 5
@@ -154,13 +158,16 @@ Write your solution using:
 const exercise5Array = ["hello", "world", "javascript", "coding", "fun"];
 
 // Your solution here (one-line arrow function):
-// const exercise5Result1 = 
+const exercise5Result1 = exercise5Array.filter(word => word.length % 2 !== 0);
 
 // Your solution here (regular arrow function):
-// const exercise5Result2 = 
+const exercise5Result2 = exercise5Array.filter(function(word) {
+  return word.length % 2 !== 0;
+});
 
 // Uncomment to test:
-// console.log("Exercise 5 - One-line:", exercise5Result1);
-// console.log("Exercise 5 - Regular:", exercise5Result2);
-// Expected: ["hello", "world", "coding", "fun"]
+console.log("Exercise 5 - One-line:", exercise5Result1); // ["hello", "world", "coding", "fun"]
+console.log("Exercise 5 - Regular:", exercise5Result2); // ["hello", "world", "coding", "fun"]
+
+
 
